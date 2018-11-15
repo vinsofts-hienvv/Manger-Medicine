@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Admin</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/template/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+    <link href="/template/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <!-- Custom fonts for this template -->
+    {{!--
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet"> --}}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=vietnamese"
+        rel="stylesheet">
+    <link href="/template/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/template/css/resume.css" rel="stylesheet">
+
+</head>
+
+
+<body id="page-top">
+
+    <div id="contentPage" hidden>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">Clarence Taylor</span>
+                <span class="d-none d-lg-block">
+                    <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/images/profile.jpg" alt="">
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#licenses">Licenses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/">Back</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid p-0">
+
+            <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+                <div class="my-auto">
+                    <h1 id="nameProvider" class="mb-0">Clarence
+                        <span class="text-primary">Taylor</span>
+                    </h1>
+                    <div class="subheading mb-5">3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
+                        <a href="mailto:name@email.com">name@email.com</a>
+                    </div>
+                    <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis
+                        for
+                        high level overviews. Iterative approaches to corporate strategy foster collaborative thinking
+                        to
+                        further the overall value proposition.</p>
+                    <div class="social-icons">
+                        <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="m-0">
+
+            <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="products">
+                <div class="">
+                    <h2 class="mb-5">Products <a data-toggle="modal" data-target="#modalAddProduct" href=""><img src="/images/add.png"
+                                alt=""></a></h2>
+
+                    <div class="resume-content mr-auto">
+                        <table>
+                            <table id="tableProducts" class="table table-hover table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Ingredient</th>
+                                        <th scope="col">Công dụng</th>
+                                        <th scope="col">Giấy phép</th>
+                                        <th scope="col">Đơn vị cấp phép</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodyHistory">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Name 2</td>
+                                        <td>Ingredient 2</td>
+                                        <td>Công dụng 2</td>
+                                        <td>Giấy phép 2</td>
+                                        <td>Đơn vị cấp phép 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Name 3</td>
+                                        <td>Ingredient 3</td>
+                                        <td>Công dụng 3</td>
+                                        <td>Giấy phép 3</td>
+                                        <td>Đơn vị cấp phép 3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Name 4</td>
+                                        <td>Ingredient 4</td>
+                                        <td>Công dụng 4</td>
+                                        <td>Giấy phép 4</td>
+                                        <td>Đơn vị cấp phép 4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Name 1</td>
+                                        <td>Ingredient 1</td>
+                                        <td>Công dụng 1</td>
+                                        <td>Giấy phép 1</td>
+                                        <td>Đơn vị cấp phép 1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+            <hr class="m-0">
+
+            <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="licenses">
+                <div class="">
+                    <h2 class="mb-5">Licenses</h2>
+
+                    <div class="resume-content mr-auto">
+                        <table>
+                            <table id="tableLicenses" class="table table-hover table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Nội dung</th>
+                                        <th scope="col">ĐV cấp</th>
+                                        <th scope="col">Ngày cấp</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodyHistory">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nội dung 1</td>
+                                        <td>ĐV cấp 1</td>
+                                        <td>Ngày cấp 1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </table>
+                    </div>
+
+                </div>
+            </section>
+
+            <hr class="m-0">
+
+
+            {{!-- Modal add product --}}
+            <section>
+                <div class="modal fade" id="modalAddProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Add Product</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <form>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">ID</label>
+                                            <input type="email" class="form-control" id="inputEmail4" placeholder="ID">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4">Name</label>
+                                            <input type="password" class="form-control" id="inputPassword4" placeholder="Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputAddress">Ingredient</label>
+                                        <input type="text" class="form-control" id="inputAddress" placeholder="Ingredient">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputAddress2">Công dụng</label>
+                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Công dụng">
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputCity">City</label>
+                                            <input type="text" class="form-control" id="inputCity">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputState">State</label>
+                                            <select id="inputState" class="form-control">
+                                                <option selected>Choose...</option>
+                                                <option>...</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Zip</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                                            <label class="form-check-label" for="gridCheck">
+                                                Check me out
+                                            </label>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    {{!-- modal register --}}
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Register</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Password</label>
+                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Address</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">Address 2</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputState">State</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Choose...</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="inputZip">Zip</label>
+                                <input type="text" class="form-control" id="inputZip">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    Check me out
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/template/jquery/jquery.min.js"></script>
+    <script src="/template/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/template/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/template/js/resume.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+    <script>
+        $("a").on('click', function (event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500, function () {
+                    window.location.hash = hash;
+                });
+            }
+        });
+
+        var targetOffset = $("#nameProvider").offset().top;
+
+        var $w = $(window).scroll(function () {
+            var x = targetOffset - $w.scrollTop();
+            if ($w.scrollTop() > targetOffset) {
+                $('.navbar-brand').css({
+                    margin: "0"
+                });
+            } else {
+                $('.navbar-brand').css({
+                    margin: x + "px auto 0"
+                });
+            }
+        });
+
+        $('#tableProducts').DataTable();
+        $('#tableLicenses').DataTable();
+
+        {{!-- document.getElementById("contentPage").hidden = true; --}}
+        $('#modalRegister').modal();
+    </script>
+</body>
+
+</html>

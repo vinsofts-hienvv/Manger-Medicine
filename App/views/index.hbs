@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Medicine</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/template/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="/template/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/template/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  {{!--
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css"> --}}
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=vietnamese"
+    rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/template/css/landing-page.min.css" rel="stylesheet">
+
+  <style>
+    .btn-custom{
+      width: 5em;
+    }
+
+    .box-search{
+      display: flex; justify-content: space-between; width: 100%;
+    }
+    .box-search >div{
+      margin: 0 0.5em;
+    }
+
+    .text-search{
+      flex-grow: 3;
+    }
+    
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav id="topPage" class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="">Medicine</a>
+      <a href="/admin"><img src="/images/admin.png" alt=""></a>
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center" style="background: url('/images/banner.jpg') no-repeat center center;">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">Seek an origin</h1>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <div class="box-search">
+            <div class="text-search">
+              <input type="text" class="form-control form-control" placeholder="medicine code">
+            </div>
+            <div>
+              <select id="inputState" class="form-control">
+                <option selected>Medicine</option>
+                <option>Provider</option>
+              </select>
+            </div>
+            <div>
+              <a href="#infoMedicine" onclick="getInfoMedicine()" class="btn btn-block btn btn-primary btn-custom">Search
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </header>
+
+
+  {{!-- Info Medicine --}}
+  <section id="infoMedicine" class="container">
+
+    <div style="display: flex; justify-content: space-between" class="row">
+      <h1 class="my-4">Info Medicine</h1>
+      <a href="#topPage"><button class="btn" style="margin-top: 3em; height: 2em; line-height: 1em" onclick="$('#infoMedicine').hide()">X</button>
+    </div></a>
+    <div class="row">
+
+      <div class="col-md-7">
+        <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+      </div>
+
+      <div class="col-md-5">
+        <h3 class="my-3">Project Description</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida
+          pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus.
+          Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+        <h3 class="my-3">Project Details</h3>
+        <ul>
+          <li>Lorem Ipsum</li>
+          <li>Dolor Sit Amet</li>
+          <li>Consectetur</li>
+          <li>Adipiscing Elit</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h3 class="my-4">Suggestions</h3>
+
+    <div class="row">
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+          <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+        </a>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+          <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+        </a>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+          <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+        </a>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+          <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Icons Grid -->
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-screen-desktop m-auto text-primary"></i>
+            </div>
+            <h3>Fully Responsive</h3>
+            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-layers m-auto text-primary"></i>
+            </div>
+            <h3>Bootstrap 4 Ready</h3>
+            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-check m-auto text-primary"></i>
+            </div>
+            <h3>Easy to Use</h3>
+            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="https://vinsofts.com">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="https://vinsofts.com/">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="https://vinsofts.com/">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="https://vinsofts.com/">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2018. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/template/jquery/jquery.min.js"></script>
+  <script src="/template/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+
+    $("a").on('click', function (event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function () {
+          window.location.hash = hash;
+        });
+      }
+    });
+
+    $('#infoMedicine').hide();
+
+    function getInfoMedicine() {
+      $('#infoMedicine').show();
+    }
+  </script>
+</body>
+
+</html>
