@@ -5,6 +5,7 @@ import "./LBProvider.sol";
 import "./LBDigitalCertificate.sol";
 
 contract LBMedicine is LBProvider{
+
     struct Medicine {
         uint medicineId;
         string medicineName; // 
@@ -18,7 +19,6 @@ contract LBMedicine is LBProvider{
     address public owner;
     Medicine[] public medicines;
     
-
     mapping(address => uint[]) public addressUserToMedicineIndex;  // get ra index cua list medicine tu address
     mapping(uint => address) public medicineAddressOf; // medicine nay cua address nao //tu thang index get ra address cua thang white list 
     mapping(address => uint[]) public addressToCeritifateIndex;
@@ -48,46 +48,71 @@ contract LBMedicine is LBProvider{
         _;
     }
     
-    function getmedicineAddressOf(uint _index) public view returns(address) {
+    function getmedicineAddressOf(uint _index) 
+        public 
+        view 
+        returns(address) 
+    {
         return medicineAddressOf[_index];
     }
     
-    function setaddressToCeritifateIndex(uint _index, address _addr) public {
+    function setaddressToCeritifateIndex(
+        uint _index, 
+        address _addr
+    )   
+        public 
+    {
         addressToCeritifateIndex[_addr].push(_index);
     }
     
-    function setcertificateToMedicine(uint _index1, uint _index2) public {
+    function setcertificateToMedicine(
+        uint _index1, 
+        uint _index2
+    ) 
+        public 
+    {
         certificateToMedicine[_index1] = _index2;
         meddicineToCertificate[_index2] = _index1;
     }
     
-
-    
-    function updateMedicine(string _medicineName,
-                            string _ingredient,
-                            string _benefit,
-                            string _productBy,
-                            uint _prices,
-                            bool _isvalid,
-                            uint _index) 
-                            isOwnerMedicine(_index) public returns(bool _suc) {
+    function updateMedicine(
+        string _medicineName,
+        string _ingredient,
+        string _benefit,
+        string _productBy,
+        uint _prices,
+        bool _isvalid,
+        uint _index
+    ) 
+        public                    
+        isOwnerMedicine(_index)  
+        returns(bool) 
+    {
         medicines[_index].medicineName  = _medicineName;
         medicines[_index].ingredient = _ingredient;
         medicines[_index].benefit = _benefit;
         medicines[_index].productsBy = _productBy;
         medicines[_index].medicinePrices = _prices;
         medicines[_index].isValidMedicine = _isvalid;
-        _suc = true;
-        return;
+
+        return true;
     }
     
-    function registerUser(string _providerName, string _addr, string _phone) isNotRegisterUser(msg.sender)  public returns(bool _suc) {
+    function registerUser(
+        string _providerName, 
+        string _addr, 
+        string _phone
+    ) 
+        public 
+        isNotRegisterUser(msg.sender)   
+        returns(bool) 
+    {
         uint myindex = insertProvider(_providerName, _addr, _phone);
         addressToProvider[msg.sender] =  myindex;
         isRegister[msg.sender] = true;
         isMedicineOf[msg.sender][myindex] = true;
-        _suc = true;
-        return;
+
+        return true;
     }
     
     function getInforMedicine(uint _index) public view returns(Medicine) {
@@ -100,37 +125,43 @@ contract LBMedicine is LBProvider{
         return;
     }
     
-    function insertMedecine(string _name,
-                            string _ingredient,
-                            string _benefit,
-                            string _productBy,
-                            uint _prices
-                            )
-                            public returns(uint) {
+    function insertMedecine(
+        string _name,
+        string _ingredient,
+        string _benefit,
+        string _productBy,
+        uint _prices
+    )
+        public returns(uint) 
+    {
         uint myindex = medicines.push(Medicine(medicines.length, _name, _ingredient, _benefit, _productBy, _prices, false)) - 1;
         return myindex;
     }
     
-    function registerMedecine(string _medicineName,
-                              string _structure,
-                              string _uses,
-                              string _productsBy,
-                              uint _prices,
-                              address _digitalcontractAddress
-                             ) 
-                             isRegisterUser(msg.sender)  // check is register
-                             public {
+    function registerMedecine(
+        string _medicineName,
+        string _structure,
+        string _uses,
+        string _productsBy,
+        uint _prices,
+        address _digitalcontractAddress
+    )
+        public 
+        isRegisterUser(msg.sender)  // check is register
+    {
         uint myindex = insertMedecine(_medicineName, _structure, _uses, _productsBy, _prices);
         addressUserToMedicineIndex[msg.sender].push(myindex);
         medicineAddressOf[myindex] = msg.sender;
         for(uint256 i = 0; i < LBDigitalCertificate(_digitalcontractAddress).getAddresslength(); i++) {
             address _myaddr = LBDigitalCertificate(_digitalcontractAddress).getAddress(i);
             LBDigitalCertificate(_digitalcontractAddress).setWaittingForApprove(_myaddr, myindex);
-        }
-           // add wattingForApprove whitelists
+        }   // add wattingForApprove whitelists
     }
     
-    function getMedicines(uint[] _index) public view returns(Medicine[]) {
+    function getMedicines(uint[] _index) 
+        public 
+        view returns(Medicine[]) 
+    {
         require(_index.length > 0);
         Medicine[] memory _medicine = new Medicine[](_index.length);
         for(uint8 i = 0; i < _index.length; i++) {
